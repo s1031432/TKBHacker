@@ -1,10 +1,9 @@
-//  Update  : 2018/09/11 00:05
-// Download : https://drive.google.com/drive/folders/1GpI5PudSMMsoNf6PPh5WpTHrP1Y9V7kx?usp=sharing
+//  Update  : 2019/06/28 07:44
 //  ReadMe  : https://www.youtube.com/watch?v=tDc1fXwdabA&feature=youtu.be
 //  Use on  : http://bookseat.tkblearning.com.tw/book-seat/student/bookSeat/index
 //
 var Code = $('div[style*="width: 120px"]').text();
-var access_token = $("script:contains('access_token : ')").text().split("access_token")[1].split(' : "')[1].split('"')[0];
+var access_token = $("#access_token_id").val();     //2019/06/28
 var session_time = new Array();
 var ExTime = 0;
 var Flag = false;
@@ -19,21 +18,6 @@ for(var i=1;;i++)
 	else
 		ClassString += i+"、"+$('option').eq(i).text().split('有')[0] + '\n';
 }
-//----------------------------Setting----------------------------\\
-// var ReConnectTime = "250"; //ns
-// var class_data = $('option').eq(1).val(); 	// 課程選單第一個（eq(1)）選項，請確保有足夠分鐘數
-// var class_data = "V5<6:TJ:;<=>?A=BD@EGCI";  //子嘉線性代數課號，每個人可能不同，請自己去開source確認
-// var date = "2018-08-26";	// format: "YYYY-MM-DD"
-// var branch_no = "TT";		// 台北 : TT, 中壢 : UA, 景美 : TE, 高雄：XX
-// session_time = ["3","4"];		// 要第幾節(最多三節)(最多三節)(最多三節)
-//
-//------session_time sample------
-//session_time = ["1","3"];
-//session_time = ["2","3","4"];	
-//------session_time sample------
-//
-//----------------------------Setting----------------------------//
-
 //-----prompt-----
 var ContinueFlag = true;
 while(ContinueFlag)
@@ -266,7 +250,8 @@ function Pick(){
 			console.log("%c-正在送出場次"+ WantSession + "的預約(っ●ω●)っ-", "font-weight:bold;");
 			$.ajax({
 				url: '/book-seat/student/bookSeat/book',
-				cache: false,
+                cache: false,
+                async: false,
 				dataType: 'json',
 				type:'POST',
 				data:{
@@ -274,7 +259,7 @@ function Pick(){
 					date : $.trim(date) ,
 					branch_no : $.trim(branch_no) ,
 					session_time : WantSession ,
-					access_token : $.trim(access_token)
+					access_token : $("#access_token_id").val()
 				},
 				error: function(xhr) {
 					console.log("%c-場次"+ WantSession + "預約失敗 o'_'o ", "font-weight:bold;");
