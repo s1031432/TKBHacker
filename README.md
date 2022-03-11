@@ -15,8 +15,6 @@
 <div align="center">
   <p align="center">
     <br />
-    <a href="https://t.me/NCCU_bot">Demo on Telegram</a>
-    ·
     <a href="mailto:108753132@nccu.edu.tw">Report bug or feature</a>
   </p>
 </div>
