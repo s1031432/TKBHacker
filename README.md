@@ -1,7 +1,6 @@
 <div align="center">
     <img src="https://img.shields.io/github/languages/code-size/s1031432/TKBHacker">
     <img src="https://img.shields.io/github/repo-size/s1031432/TKBHacker">
-    <img src="https://img.shields.io/github/package-json/v/s1031432/TKBHacker">
     <img src="https://img.shields.io/github/languages/top/s1031432/TKBHacker">
     <br>
     <img src="https://img.shields.io/github/forks/s1031432/TKBHacker">
